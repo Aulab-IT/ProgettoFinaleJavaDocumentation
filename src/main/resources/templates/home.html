@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en"
+xmlns:th="http://www.thymeleaf.org"
+>
+<head th:insert="~{index :: head}"></head>
+<body>
+    
+    <head th:insert="~{index :: navbar}"></head>
+
+        <div th:if="${param.notAuthorized}">
+            <div class="alert alert-danger">
+                Not authorized!
+            </div>
+        </div>
+
+        <div th:if="${successMessage}" class="alert alert-success">
+            <p th:text="${successMessage}"></p>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row ms-5 vh-100 align-items-center">
+                <div class="col-10">
+                    <h1 class="mb-5"> Welcome to <span class="display-4 fw-bold d-block">New Aulab Jost</span></h1>
+                </div>
+            </div>
+        </div>
+    
+    <head th:insert="~{index :: footer}"></head>
+    <script th:replace="~{index :: bootstrapScript}"></script>
+    
+</body>
+</html>
