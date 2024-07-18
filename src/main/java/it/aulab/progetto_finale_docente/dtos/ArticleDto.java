@@ -3,6 +3,7 @@ package it.aulab.progetto_finale_docente.dtos;
 import java.time.LocalDate;
 
 import it.aulab.progetto_finale_docente.models.Category;
+import it.aulab.progetto_finale_docente.models.Image;
 import it.aulab.progetto_finale_docente.models.User;
 import lombok.Getter;
 import lombok.Setter;
@@ -19,4 +20,5 @@ public class ArticleDto {
     private LocalDate publishDate;
     private User user;
     private Category category;
+    private Image image;
 }
