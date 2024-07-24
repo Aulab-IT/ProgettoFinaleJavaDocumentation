@@ -9,6 +9,7 @@ import java.util.List;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -126,6 +127,18 @@ public class ArticleController {
         }
         
         return "redirect:/revisor/dashboard"; 
+    }
+
+    //Rotta di ricerca di un articolo
+    @GetMapping("/search")
+    public String articleSearch(@Param("keyword") String keyword, Model viewModel) {
+        viewModel.addAttribute("title", "Tutti gli articoli trovati");
+        
+        List<ArticleDto> articles = articleService.search(keyword);
+        
+        viewModel.addAttribute("articles", articles);
+
+        return "article/articles";
     }
        
 }
