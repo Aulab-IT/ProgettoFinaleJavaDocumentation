@@ -78,5 +78,10 @@ public class UserServiceImpl implements UserService {
             e.printStackTrace();
         }
     }
+
+    @Override
+    public User find(Long id) {
+        return userRepository.findById(id).get();
+    }
     
 }

@@ -46,6 +46,9 @@ public class Article {
 
     @Column(nullable = true, length = 8)
     private LocalDate publishDate;
+
+    @Column(nullable = true)
+    private Boolean isAccepted;
     
     @ManyToOne
     @JoinColumn(name = "user_id")
