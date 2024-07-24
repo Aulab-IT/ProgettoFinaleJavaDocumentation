@@ -140,5 +140,4 @@ public class ArticleController {
 
         return "article/articles";
     }
-       
 }
