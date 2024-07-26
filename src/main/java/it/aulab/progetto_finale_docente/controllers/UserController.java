@@ -32,9 +32,6 @@ public class UserController {
     private UserService userService;
 
     @Autowired
-    private UserRepository userRepository;
-
-    @Autowired
     private ArticleService articleService;
     
     //Rotta di home
@@ -96,7 +93,7 @@ public class UserController {
     //Rotta per la ricerca degli articoli in base all'utente
     @GetMapping("/search/{id}")
     public String userArticlesSearch(@PathVariable("id") Long id, Model viewModel) {
-        User user = userRepository.findById(id).get();
+        User user = userService.find(id);
         viewModel.addAttribute("title", "Tutti gli articoli trovati per utente " + user.getUsername());
 
         List<ArticleDto> articles = articleService.searchByAuthor(user);
