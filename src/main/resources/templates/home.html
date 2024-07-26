@@ -16,6 +16,10 @@ xmlns:th="http://www.thymeleaf.org"
         <div th:if="${successMessage}" class="alert alert-success">
             <p th:text="${successMessage}"></p>
         </div>
+        
+        <div th:if="${errorMessage}" class="alert alert-success">
+            <p th:text="${errorMessage}"></p>
+        </div>
 
         <div class="container-fluid">
             <div class="row ms-5 vh-100 align-items-center">
